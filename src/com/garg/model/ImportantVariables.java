@@ -9,12 +9,12 @@ public class ImportantVariables {
 	private double totalShares;
 	private double intrinsicValue;
 
-	public void setAverageNetCashFlow(double averageNetCashFlow) {
-		this.averageNetCashFlow = averageNetCashFlow;
-	}
-
 	public double getAverageNetCashFlow() {
 		return averageNetCashFlow;
+	}
+
+	public void setAverageNetCashFlow(double averageNetCashFlow) {
+		this.averageNetCashFlow = averageNetCashFlow;
 	}
 
 	public double getNetDebt() {

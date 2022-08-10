@@ -6,19 +6,27 @@ import com.garg.model.ImportantVariables;
 import com.garg.model.Rate;
 
 public class FreeCashFlowCalculation {
+//	Rate rate;
+//	ImportantVariables iv;
+//	CashFlow cf;
+//	Scanner sc;
+
 	Rate rate = new Rate();
 	ImportantVariables iv = new ImportantVariables();
 	CashFlow cf = new CashFlow();
 	Scanner sc = new Scanner(System.in);
 
+
 	public void FCF() {
 		System.out.println("The future cash flow is as follows: ");
-		
+
 		List<Double> list = new ArrayList<>();
 
 		for (int i = 1; i <= 5; i++) {
-			double firstFiveYear = cf.averageCashFlow() * Math.pow((1 + (rate.getFirstFiveYearGrowthRate() / 100)), i);
-			// System.out.println("The future cash flow for " + i + "th year is " + sum);
+			double firstFiveYear = iv.getAverageNetCashFlow()
+					* Math.pow((1 + (rate.getFirstFiveYearGrowthRate() / 100)), i);
+			// System.out.println("The future cash flow for " + i + "th year is " +
+			// firstFiveYear);
 			list.add(firstFiveYear);
 		}
 
@@ -30,7 +38,7 @@ public class FreeCashFlowCalculation {
 			list.add((i - 1), lastFiveYear);
 		}
 
-//		System.out.println(list);
+		System.out.println(list);
 		double tenthCash = fifthCash * Math.pow((1 + (rate.getLastFiveYearGrowthRate() / 100)), 5);
 //
 		double terminalValue = tenthCash * (1 + (rate.getTerminalGrowthRate() / 100))
@@ -81,8 +89,6 @@ public class FreeCashFlowCalculation {
 //
 		System.out.println("Taking 30% as margin of safety to be on conservative side: " + intrinsicValueLower * 0.7);
 
-		
 	}
-	
 
 }
