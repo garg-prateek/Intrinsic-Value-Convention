@@ -56,4 +56,6 @@ public class ImportantVariables {
 	public void setIntrinsicValue(double intrinsicValue) {
 		this.intrinsicValue = intrinsicValue;
 	}
+
+	
 }

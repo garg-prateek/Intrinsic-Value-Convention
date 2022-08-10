@@ -1,30 +1,24 @@
-package com.garg.service;
+package com.garg.controller;
+
+import com.garg.service.CashFlow;
 
 public class Test {
 
 	public static void main(String[] args) {
-		
-		
-		System.out.println("-----All in crores-----");
+
 		CashFlow cashFlow = new CashFlow();
 //		RateInput rateInput = new RateInput();
 //		FreeCashFlowCalculation fcfc = new FreeCashFlowCalculation();
 		cashFlow.averageCashFlow();
-		cashFlow.input();
-		cashFlow.FCF();
+		
+		System.out.println(cashFlow);
 
 //		rateInput.input();
 //		
 //		
 ////		
 //		fcfc.FCF();
-		
-		
-		
-		
-		
-		
-		
+
 //		rateInput.terminalRate();
 //		rateInput.discountRate();
 //		rateInput.firstFiveYearGrowthRate();

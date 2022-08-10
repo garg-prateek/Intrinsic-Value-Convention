@@ -18,7 +18,10 @@ public class CashFlow {
 
 	Scanner sc = new Scanner(System.in);
 
-	public double averageCashFlow() {
+	public void averageCashFlow() {
+		System.out.println("-----All in crores-----");
+		System.out.println(
+				"All You should have is the 'BALANCE SHEET' of company, which can be downloaded from the company's website");
 
 		System.out.println("Enter two year before operating Cash");
 		oc.setTwoYearBeforeOperatingCash(sc.nextDouble());
@@ -55,11 +58,6 @@ public class CashFlow {
 				+ (oc.getPresentYearOperatingCash() - ce.getPresentYearCapitalExpenditure())) / 3));
 
 		System.out.println("The Net Average Cash Flow is: " + iv.getAverageNetCashFlow());
-		return iv.getAverageNetCashFlow();
-
-	}
-
-	public void input() {
 
 		System.out.println("Please Enter All Values Of Rate In Percentage");
 
@@ -75,9 +73,6 @@ public class CashFlow {
 		System.out.println("Enter last five year growth rate of Free Cash Flow");
 		rate.setLastFiveYearGrowthRate(sc.nextDouble());
 
-	}
-
-	public void FCF() {
 		System.out.println("The future cash flow is as follows: ");
 
 		List<Double> list = new ArrayList<>();
@@ -153,4 +148,11 @@ public class CashFlow {
 
 	}
 
+	@Override
+	public String toString() {
+		return "Values To Keep in mind are -  [intrinsicValue=" + iv.getIntrinsicValue() + ", LowerintrinsicValue="
+				+ (iv.getIntrinsicValue() * 0.9) + ", UpperintrinsicValue=" + (iv.getIntrinsicValue() * 1.1)
+				+ ", ConservativeintrinsicValue=" + (iv.getIntrinsicValue() * 0.7) + "]";
+
+	}
 }
