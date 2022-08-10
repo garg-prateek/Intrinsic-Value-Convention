@@ -1,17 +1,18 @@
 package com.garg.controller;
 
+import com.garg.model.OutputVariable;
 import com.garg.service.CashFlow;
 
-public class Test {
+public class Controller {
 
 	public static void main(String[] args) {
 
 		CashFlow cashFlow = new CashFlow();
 //		RateInput rateInput = new RateInput();
 //		FreeCashFlowCalculation fcfc = new FreeCashFlowCalculation();
-		cashFlow.averageCashFlow();
-		
-		System.out.println(cashFlow);
+		OutputVariable output = cashFlow.averageCashFlow();
+
+		System.out.println(output);
 
 //		rateInput.input();
 //		

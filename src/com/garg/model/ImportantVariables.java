@@ -7,7 +7,7 @@ public class ImportantVariables {
 	private double cashAndCashEquivalents;
 	private double bankBalance;
 	private double totalShares;
-	private double intrinsicValue;
+	
 
 	public double getAverageNetCashFlow() {
 		return averageNetCashFlow;
@@ -49,13 +49,7 @@ public class ImportantVariables {
 		this.totalShares = totalShares;
 	}
 
-	public double getIntrinsicValue() {
-		return intrinsicValue;
-	}
-
-	public void setIntrinsicValue(double intrinsicValue) {
-		this.intrinsicValue = intrinsicValue;
-	}
+	
 
 	
 }

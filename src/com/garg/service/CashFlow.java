@@ -7,6 +7,7 @@ import java.util.Scanner;
 import com.garg.model.CapitalExpenditure;
 import com.garg.model.ImportantVariables;
 import com.garg.model.OperatingCash;
+import com.garg.model.OutputVariable;
 import com.garg.model.Rate;
 
 public class CashFlow {
@@ -18,7 +19,9 @@ public class CashFlow {
 
 	Scanner sc = new Scanner(System.in);
 
-	public void averageCashFlow() {
+	public OutputVariable averageCashFlow() {
+
+		OutputVariable ov = new OutputVariable();
 		System.out.println("-----All in crores-----");
 		System.out.println(
 				"All You should have is the 'BALANCE SHEET' of company, which can be downloaded from the company's website");
@@ -132,27 +135,23 @@ public class CashFlow {
 		System.out.println("Enter Total Bank Balance Of company ");
 		iv.setBankBalance(sc.nextDouble());
 
-		iv.setIntrinsicValue(
+		ov.setIntrinsicValue(
 				((shareholderCash - (iv.getNetDebt() - (iv.getCashAndCashEquivalents() + iv.getBankBalance())))
 						/ iv.getTotalShares()));
 //
-		System.out.println("The Intrinsic value of share is: " + iv.getIntrinsicValue());
+		System.out.println("The Intrinsic value of share is: " + ov.getIntrinsicValue());
 //
 //		System.out.println("Assuming 10 % error for upper and lower band, the intrinsic value will be: ");
-		double intrinsicValueLower = iv.getIntrinsicValue() * 0.9;
-		double intrinsicValueUpper = iv.getIntrinsicValue() * 1.1;
+		ov.setIntrinsicValueLower(ov.getIntrinsicValue() * 0.9);
+		ov.setIntrinsicValueUpper(ov.getIntrinsicValue() * 1.1);
 //
-		System.out.println("The stock is fairly value between " + intrinsicValueLower + " and " + intrinsicValueUpper);
-//
-		System.out.println("Taking 30% as margin of safety to be on conservative side: " + intrinsicValueLower * 0.7);
+		System.out.println("The stock is fairly value between " + ov.getIntrinsicValueLower() + " and "
+				+ ov.getIntrinsicValueUpper());
+		ov.setConservativeIntrinsicValue(ov.getIntrinsicValueLower() * 0.7);
+		System.out.println(
+				"Taking 30% as margin of safety to be on conservative side: " + ov.getConservativeIntrinsicValue());
 
+		return ov;
 	}
 
-	@Override
-	public String toString() {
-		return "Values To Keep in mind are -  [intrinsicValue=" + iv.getIntrinsicValue() + ", LowerintrinsicValue="
-				+ (iv.getIntrinsicValue() * 0.9) + ", UpperintrinsicValue=" + (iv.getIntrinsicValue() * 1.1)
-				+ ", ConservativeintrinsicValue=" + (iv.getIntrinsicValue() * 0.7) + "]";
-
-	}
 }
