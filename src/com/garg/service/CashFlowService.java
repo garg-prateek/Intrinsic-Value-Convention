@@ -17,10 +17,10 @@ public class CashFlowService {
 	Rate rate;
 	
 	public CashFlowService(CapitalExpenditure ce,OperatingCash oc,ImportantVariables iv,Rate rate) {
-		ce = this.ce;
-		oc = this.oc;
-		iv= this.iv;
-		rate = this.rate;
+		this.ce = ce;
+		this.oc = oc;
+		this.iv= iv;
+		this.rate = rate;
 	}
 	
 	

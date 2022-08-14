@@ -19,10 +19,10 @@ public class InputService {
 //		iv = new ImportantVariables();
 //		rate = new Rate();
 		
-		ce = this.ce;
-		oc = this.oc;
-		iv= this.iv;
-		rate = this.rate;
+		this.ce = ce;
+		this.oc = oc;
+		this.iv= iv;
+		this.rate = rate;
 		input();
 	}
 	public void input() {
